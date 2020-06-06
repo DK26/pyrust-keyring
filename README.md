@@ -1,10 +1,10 @@
 # pyrust-keyring
-A C-level convertion to Python (cpython) of the Rust keyring crate by hwchen (https://github.com/hwchen/keyring-rs).
+A C-level conversion to Python (cpython) of the Rust keyring crate by hwchen (https://github.com/hwchen/keyring-rs).
 
 # Motivation
-Since using keyring to store sensitive data with the PyInstaller library isn't possible at the moment due to a very long-term unfixed issue in the process, I've decided to attempt a convertion from the Rust programming language (as I'm still learning it) of its own keyring library to Python.
+Since using keyring to store sensitive data with the PyInstaller library isn't possible at the moment due to a very long-term unfixed issue in the process, I've decided to attempt a conversion from the Rust programming language (as I'm still learning it) of its own keyring library to Python.
 
-Tested succesfully on Windows 10 with PyInstaller.
+Tested successfully on Windows 10 with PyInstaller.
 
 # Compile
 `cargo build --release`
@@ -18,7 +18,7 @@ import rskeyring
 
 rskeyring.set_password("service", "user", "password")
 
-secret = rskeyring.get_password("serivce", "user")
+secret = rskeyring.get_password("service", "user")
 
 print(secret)
 ```
