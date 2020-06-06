@@ -2,9 +2,9 @@
 A C-level convertion to Python (cpython) of the Rust keyring crate by hwchen (https://github.com/hwchen/keyring-rs).
 
 # Motivation
-Since using keyring to store sensitive data with the PyInstaller library isn't possible at the moment due a long-term error in the process, I've decided to attempt a convertion from the Rust programming language (as I'm still learning it) of its own keyring library to Python.
+Since using keyring to store sensitive data with the PyInstaller library isn't possible at the moment due to a very long-term unfixed issue in the process, I've decided to attempt a convertion from the Rust programming language (as I'm still learning it) of its own keyring library to Python.
 
-Tested succesfully on Windows 10.
+Tested succesfully on Windows 10 with PyInstaller.
 
 # Compile
 `cargo build --release`
