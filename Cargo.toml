@@ -1,0 +1,17 @@
+[package]
+name = "rskeyring"
+version = "0.1.0"
+authors = ["David Krasnitsky <dikaveman@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "rskeyring"
+crate-type = ["cdylib"]
+
+[dependencies.cpython]
+version = "0.5"
+features = ["extension-module"]
+
+[dependencies]
+keyring = "0.9.0"
