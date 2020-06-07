@@ -3,7 +3,7 @@ use cpython::{Python, PyResult, PyObject, py_module_initializer, py_fn};
 py_module_initializer!(rskeyring, |py, m | {
     m.add(py, "__doc__", "A keyring module imported from the Rust programming language. \n\
     Rust Keyring Library(Crate): https://docs.rs/crate/keyring\n\
-    The motivation behind this conversion is to make an attempt to combine keyring with PyInstaller.")?;
+    The main motivation behind this port is to enable keyring with PyInstaller.")?;
     m.add(py, "set_password", py_fn!(py, set_password(service: &str, username: &str, password: &str)))?;
     m.add(py, "get_password", py_fn!(py, get_password(service: &str, username: &str)))?;
     Ok(())
