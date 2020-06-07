@@ -10,7 +10,13 @@ Tested successfully on Windows 10 with PyInstaller.
 `cargo build --release`
 
 # Use Compiled Library
+
+## Windows
 Copy the file `pyrust-keyring\target\release\rskeyring.dll` to your Python project. Make sure you rename its extension from `.dll` to `.pyd`.
+
+## MacOS
+Copy the file `pyrust-keyring/target/release/rskeyring.dylib` to your Python project. Make sure you rename its extension from `.dylib` to `.so`.
+
 
 # Usage
 ```python
