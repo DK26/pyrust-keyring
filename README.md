@@ -3,10 +3,9 @@ A C-level conversion to Python (cpython) of the Rust keyring crate by hwchen (ht
 
 # Motivation
 Since using _pypi.org_ keyring library to store sensitive data with the PyInstaller library  
-isn't possible at the moment due to the next error: `keyring.errors.NoKeyringError:`  
- and since it has been like this for a long time now, I've decided to try to  
-port the Rust programming language keyring library (as I'm still learning it) to Python  
- and been able to do so successfully.
+isn't possible at the moment due to the error `keyring.errors.NoKeyringError` and since   
+it has been like this for a long time now, I've decided to try to port the Rust programming language  
+keyring library (as I'm still learning it) to Python and been able to do so successfully.
 
 Tested successfully on Windows 10 to work with PyInstaller.
 
