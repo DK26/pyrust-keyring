@@ -19,14 +19,26 @@ Copy the file `pyrust-keyring/target/release/rskeyring.dylib` to your Python pro
 
 
 # Usage
+
+## Store Password
+```python
+import rskeyring
+from getpass import getpass
+
+username = input("Username: ")
+password = getpass()
+
+rskeyring.set_password("service", username, password)
+```
+
+## Retrieve Password
 ```python
 import rskeyring
 
-rskeyring.set_password("service", "user", "password")
+username = input("Username: ")
+password = rskeyring.get_password("service", username)
 
-secret = rskeyring.get_password("service", "user")
-
-print(secret)
+print(password)
 ```
 
 # Docs
