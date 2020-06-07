@@ -10,8 +10,8 @@ name = "rskeyring"
 crate-type = ["cdylib"]
 
 [dependencies.cpython]
-version = "0.5"
+version = "*"
 features = ["extension-module"]
 
 [dependencies]
-keyring = "0.9.0"
+keyring = "*"
