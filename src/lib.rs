@@ -12,10 +12,12 @@ py_module_initializer!(rskeyring, |py, m | {
 fn set_password(_py: Python, service: &str, username: &str, password: &str) -> PyResult<PyObject> {
 
     let keyring_service = keyring::Keyring::new(service, username);
-    return match keyring_service.set_password(password) {
-        _ => Ok(_py.None())
+
+    match keyring_service.set_password(password) {
+        _ => {} // ignore returning values / errors
     }
 
+    Ok(_py.None())
 }
 
 fn get_password(_py: Python, service: &str, username: &str) -> PyResult<String> {
