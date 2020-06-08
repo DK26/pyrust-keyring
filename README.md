@@ -9,6 +9,17 @@ keyring library (as I'm still learning it) to Python and been able to do so succ
 
 Tested successfully on Windows 10 to work with PyInstaller.
 
+# Installation
+
+`pip install rskeyring`
+
+**Please Note:** This currently works only on Windows.  
+If you do not intend on using _PyInstaller_, do consider  
+alternative keyring library such as:
+
+`pip install keyring`
+
+
 # Usage
 
 ## Store Password
