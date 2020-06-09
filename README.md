@@ -58,9 +58,6 @@ Copy the file `pyrust-keyring\target\release\rskeyring.dll` to your Python proje
 ## MacOS
 Copy the file `pyrust-keyring/target/release/rskeyring.dylib` to your Python project. Make sure you rename its extension from `.dylib` to `.so`.
 
-
-
-
 # Docs
 
 `help(rskeyring)`
