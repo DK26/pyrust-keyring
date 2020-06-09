@@ -1,5 +1,5 @@
 # pyrust-keyring
-A C-level conversion to Python (cpython) of the Rust keyring crate by hwchen (https://github.com/hwchen/keyring-rs).
+A C-level keyring port from the Rust crate created by hwchen (https://github.com/hwchen/keyring-rs).
 
 # Motivation
 Since using _pypi.org_ keyring library to store sensitive data with the PyInstaller library  
@@ -57,9 +57,6 @@ Copy the file `pyrust-keyring\target\release\rskeyring.dll` to your Python proje
 
 ## MacOS
 Copy the file `pyrust-keyring/target/release/rskeyring.dylib` to your Python project. Make sure you rename its extension from `.dylib` to `.so`.
-
-
-
 
 # Docs
 
