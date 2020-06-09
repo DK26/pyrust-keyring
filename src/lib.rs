@@ -2,8 +2,8 @@ use cpython::{Python, PyResult, PyObject, py_module_initializer, py_fn};
 
 py_module_initializer!(rskeyring, |py, m | {
 
-    let doc =
-    r#"A C-level keyring module imported from the Rust programming language.
+    let _doc =
+    r#"A C-level keyring module ported from the Rust programming language.
 
         The main motivation behind creating this port was to enable keyring with PyInstaller.
 
@@ -23,7 +23,7 @@ py_module_initializer!(rskeyring, |py, m | {
             Python Port: MIT
             Rust Keyring (keyring-rs): MIT + Apache 2.0"#;
 
-    m.add(py, "__doc__", doc)?;
+    m.add(py, "__doc__", _doc)?;
     m.add(py, "set_password", py_fn!(py, set_password(service: &str, username: &str, password: &str)))?;
     m.add(py, "get_password", py_fn!(py, get_password(service: &str, username: &str)))?;
     Ok(())
