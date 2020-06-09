@@ -1,5 +1,5 @@
 # pyrust-keyring
-A C-level keyring port to Python (cpython) for the Rust keyring crate by hwchen (https://github.com/hwchen/keyring-rs).
+A C-level keyring port from the Rust crate created by hwchen (https://github.com/hwchen/keyring-rs).
 
 # Motivation
 Since using _pypi.org_ keyring library to store sensitive data with the PyInstaller library  
