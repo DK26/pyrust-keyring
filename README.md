@@ -1,5 +1,5 @@
 # rskeyring (Rust Keyring)
-A C-level, Rust keyring library bind to Python (https://github.com/DK26/pyrust-keyring).
+A C-level, Rust keyring library bind to Python (https://github.com/DK26/pyrust-keyring).  
 The Rust library (crate) itself was created by hwchen (https://github.com/hwchen/keyring-rs).
 
 # Motivation
