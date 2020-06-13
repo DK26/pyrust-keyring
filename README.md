@@ -32,7 +32,7 @@ password = getpass()
 
 try:
     rskeyring.set_password("service", username, password)
-except IOError:
+except OSError:
     print(f"Unable to create or update service for {username}."
         f"\nPlease make sure you have the proper permissions")
 ```
