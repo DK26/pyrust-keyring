@@ -1,4 +1,5 @@
-use cpython::{Python, PyResult, PyObject, py_module_initializer, py_fn};
+use cpython::{Python, PyResult, PyObject, PyErr, py_module_initializer, py_fn};
+use std::error::Error;
 
 py_module_initializer!(rskeyring, |py, m | {
 
@@ -26,6 +27,7 @@ py_module_initializer!(rskeyring, |py, m | {
     m.add(py, "__doc__", _doc)?;
     m.add(py, "set_password", py_fn!(py, set_password(service: &str, username: &str, password: &str)))?;
     m.add(py, "get_password", py_fn!(py, get_password(service: &str, username: &str)))?;
+    m.add(py, "delete_password", py_fn!(py, get_password(service: &str, username: &str)))?;
     Ok(())
 });
 
@@ -50,5 +52,18 @@ fn get_password(_py: Python, service: &str, username: &str) -> PyResult<String> 
         Ok(result) => Ok(result),
         Err(_e) => Ok(String::new())
     }
+
+}
+
+fn delete_password(_py: Python, service: &str, username: &str) -> PyResult<PyObject> {
+
+    let keyring_service = keyring::Keyring::new(service, username);
+
+    match keyring_service.delete_password()
+    {
+        _ => {} // ignore returning values / errors
+    }
+
+    Ok(_py.None())
 
 }
