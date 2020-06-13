@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.1.1",
     author="David Krasnitsky",
     author_email="dikaveman@gmail.com",
-    description="A C-level keyring module ported from the Rust programming language (crates.io)",
+    description="A C-level keyring module bind from the Rust programming language (crates.io)",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/DK26/pyrust-keyring",
