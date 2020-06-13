@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="rskeyring",
-    version="0.1.0",
+    version="0.1.1",
     author="David Krasnitsky",
     author_email="dikaveman@gmail.com",
     description="A C-level keyring module ported from the Rust programming language (crates.io)",
