@@ -1,5 +1,6 @@
 # rskeyring (Rust Keyring)
-A C-level keyring bind from Rust's crate created by hwchen (https://github.com/hwchen/keyring-rs).
+A C-level, Rust keyring library bind to Python (https://github.com/DK26/pyrust-keyring).  
+The Rust library (crate) itself was created by hwchen (https://github.com/hwchen/keyring-rs).
 
 # Motivation
 Since using _pypi.org_ keyring library to store sensitive data with the PyInstaller library  
