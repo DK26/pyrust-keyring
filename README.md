@@ -23,7 +23,7 @@ alternative keyring library such as:
 
 # Usage
 
-## Store Password
+## Store or Update Password
 ```python
 import rskeyring
 from getpass import getpass
