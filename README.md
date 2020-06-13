@@ -1,10 +1,10 @@
-# pyrust-keyring
-A C-level keyring port from the Rust crate created by hwchen (https://github.com/hwchen/keyring-rs).
+# rskeyring (Rust Keyring)
+A C-level keyring bind from Rust's crate created by hwchen (https://github.com/hwchen/keyring-rs).
 
 # Motivation
 Since using _pypi.org_ keyring library to store sensitive data with the PyInstaller library  
 isn't possible at the moment due to the error `keyring.errors.NoKeyringError` and since   
-it has been like this for a long time now, I've decided to try to port the Rust programming language  
+it has been like this for a long time now, I've decided to try to bind the Rust programming language  
 keyring library (as I'm still learning it) to Python and been able to do so successfully.
 
 Tested successfully on Windows 10 to work with PyInstaller.
@@ -42,6 +42,21 @@ password = rskeyring.get_password("service", username)
 
 print(password)
 ```
+
+## Delete Password
+```python
+
+import rskeyring
+
+username = input("Username: ")
+password = rskeyring.delete_password("service", username)
+
+```
+
+## Exceptions
+Currently the external Rust `kerying-rs` library doesn't provide much of error details.  
+So at this stage, we just throw a general `Exception` with a general error message originated by the underlying Rust library itself.  
+* e.g. `Exception: Windows Vault Error`
 
 # Compile
 In order to compile the Rust code, you'll need to have the `rustup` toolchain.  

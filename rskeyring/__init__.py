@@ -11,3 +11,6 @@ def set_password(service: str, username: str, password: str) -> None:
     return rskeyring.set_password(service, username, password)
 
 
+def delete_password(service: str, username: str) -> None:
+    return rskeyring.delete_password(service, username)
+
