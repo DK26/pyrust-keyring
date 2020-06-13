@@ -14,7 +14,7 @@ Tested successfully on Windows 10 to work with PyInstaller.
 `pip install rskeyring`
 
 **Please Note:** This currently works only on Windows.  
-If you do not intend on using _PyInstaller_, do consider  
+If you do **not** intend on using _PyInstaller_, do consider  
 alternative keyring library such as:
 
 `pip install keyring`
@@ -72,6 +72,10 @@ To install the `rustup` toolchain, go to https://rustup.rs
 
 From within this directory, execute the next command to compile:  
 `cargo build --release`
+
+# Unit Tests
+
+`python -m unittest tests.lib_unittest`
 
 # Use Compiled Library
 
