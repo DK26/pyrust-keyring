@@ -30,7 +30,11 @@ from getpass import getpass
 username = input("Username: ")
 password = getpass()
 
-rskeyring.set_password("service", username, password)
+try:
+    rskeyring.set_password("service", username, password)
+except IOError:
+    print(f"Unable to create or update service for {username}."
+        f"\nPlease make sure you have the proper permissions")
 ```
 
 ## Retrieve Password
@@ -38,25 +42,29 @@ rskeyring.set_password("service", username, password)
 import rskeyring
 
 username = input("Username: ")
-password = rskeyring.get_password("service", username)
-
-print(password)
+try:
+    password = rskeyring.get_password("service", username)
+    print(password)
+except OSError:
+    print(f"Unable to get {username}'s password from 'service'")
 ```
 
 ## Delete Password
 ```python
-
 import rskeyring
 
 username = input("Username: ")
-password = rskeyring.delete_password("service", username)
 
+try:
+    rskeyring.delete_password("service", username)
+except OSError:
+    print(f"Unable to remove {username} from 'service'")
 ```
 
 ## Exceptions
-Currently the external Rust `kerying-rs` library doesn't provide much of error details.  
-So at this stage, we just throw a general `Exception` with a general error message originated by the underlying Rust library itself.  
-* e.g. `Exception: Windows Vault Error`
+Currently the external Rust `kerying-rs` library doesn't provide any concrete error details.  
+At this stage, we just throw a general `OSError` with an error message originated by the underlying Rust library itself.  
+* e.g. `OSError: Windows Vault Error`
 
 # Compile
 In order to compile the Rust code, you'll need to have the `rustup` toolchain.  
