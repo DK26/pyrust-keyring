@@ -2,7 +2,7 @@ use cpython::{Python, PyResult, PyObject, exc, PyErr, py_module_initializer, py_
 
 py_module_initializer!(rskeyring, |py, m | {
 
-    let _doc =
+    let doc =
     r#"A C-level keyring module bound from the Rust programming language.
 
         This is a "keyring" library for storing sensitive data, that is borrowed and bound from
@@ -46,44 +46,44 @@ py_module_initializer!(rskeyring, |py, m | {
 
         Version: 0.1.1"#;
 
-    m.add(py, "__doc__", _doc)?;
+    m.add(py, "__doc__", doc)?;
     m.add(py, "set_password", py_fn!(py, set_password(service: &str, username: &str, password: &str)))?;
     m.add(py, "get_password", py_fn!(py, get_password(service: &str, username: &str)))?;
     m.add(py, "delete_password", py_fn!(py, delete_password(service: &str, username: &str)))?;
     Ok(())
 });
 
-fn set_password(_py: Python, service: &str, username: &str, password: &str) -> PyResult<PyObject> {
+fn set_password(py: Python, service: &str, username: &str, password: &str) -> PyResult<PyObject> {
 
     let keyring_service = keyring::Keyring::new(service, username);
 
     match keyring_service.set_password(password) {
-        Ok(()) => Ok(_py.None()),
-        Err(_e) => Err(PyErr::new::<exc::OSError, _>(_py, _e.to_string()))
+        Ok(()) => Ok(py.None()),
+        Err(_e) => Err(PyErr::new::<exc::OSError, _>(py, _e.to_string()))
     }
 }
 
-fn get_password(_py: Python, service: &str, username: &str) -> PyResult<String> {
+fn get_password(py: Python, service: &str, username: &str) -> PyResult<String> {
 
     let keyring_service = keyring::Keyring::new(service, username);
 
     return match keyring_service.get_password()
     {
         Ok(result) => Ok(result),
-        Err(_e) => Err(PyErr::new::<exc::OSError, _>(_py, _e.to_string()))
+        Err(e) => Err(PyErr::new::<exc::OSError, _>(py, e.to_string()))
     }
 
 }
 
 
-fn delete_password(_py: Python, service: &str, username: &str) -> PyResult<PyObject> {
+fn delete_password(py: Python, service: &str, username: &str) -> PyResult<PyObject> {
 
     let keyring_service = keyring::Keyring::new(service, username);
 
     match keyring_service.delete_password()
     {
-        Ok(_) => Ok(_py.None()),
-        Err(_e) => Err(PyErr::new::<exc::OSError, _>(_py, _e.to_string()))
+        Ok(_) => Ok(py.None()),
+        Err(e) => Err(PyErr::new::<exc::OSError, _>(py, e.to_string()))
     }
 
 }
