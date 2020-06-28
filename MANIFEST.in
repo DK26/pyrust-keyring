@@ -1,1 +1,2 @@
-recursive-include rskeyring *.pyd
+include Cargo.toml
+recursive-include src *
