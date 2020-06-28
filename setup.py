@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="rskeyring",
-    version="0.1.2",
+    version="0.1.2.1",
     author="David Krasnitsky",
     author_email="dikaveman@gmail.com",
     description="A C-level keyring module bind from the Rust programming language (crates.io)",
