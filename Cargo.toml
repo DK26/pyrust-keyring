@@ -15,6 +15,3 @@ features = ["extension-module"]
 
 [dependencies]
 keyring = "*" # Last known working version "0.9.0"
-
-[build-system]
-requires = ["setuptools", "wheel", "setuptools-rust"]

@@ -4,11 +4,11 @@ Cargo.lock
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod] # When compiling on Windows, we pack the .pyd file
+#*.py[cod] # When compiling on Windows, we pack the .pyd file
 *$py.class
 
 # C extensions
-*.so # When compiling in Linux / MacOS, we pack the .so file
+#*.so # When compiling in Linux / MacOS, we pack the .so file
 
 # Distribution / packaging
 .Python
