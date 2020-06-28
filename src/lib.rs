@@ -66,7 +66,7 @@ py_module_initializer!(rskeyring, |py, m | {
 
             GitHub:     https://github.com/DK26
 
-        Version: 0.1.2.1"#;
+        Version: 0.2.0"#;
 
     m.add(py, "__doc__", doc)?;
     m.add(py, "set_password", py_fn!(py, set_password(service: &str, username: &str, password: &str)))?;

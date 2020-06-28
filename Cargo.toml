@@ -1,6 +1,6 @@
 [package]
 name = "rskeyring"
-version = "0.1.2.1"
+version = "0.2.0"
 authors = ["David Krasnitsky <dikaveman@gmail.com>"]
 edition = "2018"
 
