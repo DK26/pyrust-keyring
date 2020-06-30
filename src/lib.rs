@@ -81,7 +81,7 @@ fn set_password(py: Python, service: &str, username: &str, password: &str) -> Py
 
     match keyring_service.set_password(password) {
         Ok(()) => Ok(py.None()),
-        Err(_e) => Err(PyErr::new::<exc::OSError, _>(py, _e.to_string()))
+        Err(e) => Err(PyErr::new::<exc::OSError, _>(py, e.to_string()))
     }
 }
 
