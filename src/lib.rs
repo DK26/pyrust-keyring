@@ -89,7 +89,7 @@ fn get_password(py: Python, service: &str, username: &str) -> PyResult<String> {
 
     let keyring_service = keyring::Keyring::new(service, username);
 
-    return match keyring_service.get_password()
+    match keyring_service.get_password()
     {
         Ok(result) => Ok(result),
         Err(e) => Err(PyErr::new::<exc::OSError, _>(py, e.to_string()))
