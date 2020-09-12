@@ -22,7 +22,7 @@
 
 use cpython::{exc, py_fn, py_module_initializer, PyErr, PyObject, PyResult, Python};
 
-py_module_initializer!(rskeyring, |py, m| {
+py_module_initializer!(rskeyring_bind, |py, m| {
     let doc = r#"A C-level keyring module bound from the Rust programming language.
 
         This is a "keyring" library for storing sensitive data, that is borrowed and bound from

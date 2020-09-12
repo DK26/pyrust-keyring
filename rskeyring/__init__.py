@@ -20,9 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from . import rskeyring
+from . import rskeyring_bind
 
-__doc__ = rskeyring.__doc__
+__doc__ = rskeyring_bind.__doc__
 
 
 def get_password(service: str, username: str) -> str:
@@ -35,7 +35,7 @@ def get_password(service: str, username: str) -> str:
     :param username: A key name
     :return: Password (secret item)
     """
-    return rskeyring.get_password(service, username)
+    return rskeyring_bind.get_password(service, username)
 
 
 def set_password(service: str, username: str, password: str) -> None:
@@ -49,7 +49,7 @@ def set_password(service: str, username: str, password: str) -> None:
     :param password: A secret item
     :return: None
     """
-    return rskeyring.set_password(service, username, password)
+    return rskeyring_bind.set_password(service, username, password)
 
 
 def delete_password(service: str, username: str) -> None:
@@ -62,5 +62,5 @@ def delete_password(service: str, username: str) -> None:
     :param username: A key name
     :return: None
     """
-    return rskeyring.delete_password(service, username)
+    return rskeyring_bind.delete_password(service, username)
 

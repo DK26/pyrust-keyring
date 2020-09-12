@@ -16,7 +16,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/DK26/pyrust-keyring",
     rust_extensions=[RustExtension("rskeyring.rskeyring", binding=Binding.RustCPython)],
-    packages=["rskeyring"] + find_packages(),
+    packages=["rskeyring_bind"] + find_packages(),
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
