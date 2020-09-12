@@ -1,6 +1,5 @@
 import unittest
 from uuid import uuid4
-
 import rskeyring
 
 
